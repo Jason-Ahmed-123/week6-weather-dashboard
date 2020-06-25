@@ -6,45 +6,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather Dashboard</title>
+
     <!-- links to Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- link to css file -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
     <header>
-        <div>
-            <h1>Weather Dashboard</h1>
+        <div class="heading">
+            <div>
+                <h1>Weather Dashboard</h1>
+            </div>
         </div>
     </header>
+
+    <br>
+
     <div class="container-fluid">
         <div class=row>
             <div class="col-md-3 pl-2">
-                <h3>Search for a City:</h3>
-                <form class="form-inline">
-                    <div class="form-group">
-                        <input type="text">
+                <!-- rem: relative to font size -->
+                <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                        <h5>Search for a City:</h5>
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="city-input">
+                            </div>
+                            <button id="search-button" type="submit" class="btn btn-primary"><i
+                                    class="fas fa-search"></i></button>
+                        </form>
                     </div>
-                    <button id="search-button" type="submit" class="btn btn-primary">Search</button>
-                </form>
-            </div>
-            <div class="col-md-9">
-                <div id="current-weather" class='panel'>
-                    <div class="panel-body"></div>
                 </div>
+            </div>
+
+            <!-- The main city info panel -->
+            <div class="col-md-9">
+                <div id="weather" class='card'>
+                    <div class="card-body">    
+                        <p class="card-text" id="temp"></p>
+                        <p class="card-text" id="humidity"></p>
+                        <p class="card-text" id="wind"></p>
+                        <p class="card-text" id="uv"></p>
+                    </div>
+                </div>
+
+                <!-- 5-day weather forecast rows -->
                 <div class="row">
-                    <div class="col-md-9">
+                    <div id="forecast-weather" class="col-md-9">
                         <h4>5-Day Forecast:</h4>
-                        <div id="day-1" class="panel-body"></div>
-                        <div id="day-2" class="panel-body"></div>
-                        <div id="day-3" class="panel-body"></div>
-                        <div id="day-4" class="panel-body"></div>
-                        <div id="day-5" class="panel-body"></div>
+                        <div id="forecast-cards">
+                            <div class="card forecast">
+                                <div id="forecast1" class="card-body">
+                                    <!-- date, icon, temp, humidity data from API -->
+                                </div>
+                            </div>
+                            <div class="card forecast">
+                                <div id="forecast2" class="card-body">
+                                    <!-- date, icon, temp, humidity data from API -->
+                                </div>
+                            </div>
+                            <div class="card forecast">
+                                <div id="forecast3" class="card-body">
+                                    <!-- date, icon, temp, humidity data from API -->
+                                </div>
+                            </div>
+                            <div class="card forecast">
+                                <div id="forecast4" class="card-body">
+                                    <!-- date, icon, temp, humidity data from API -->
+                                </div>
+                            </div>
+                            <div class="card forecast">
+                                <div id="forecast5" class="card-body">
+                                    <!-- date, icon, temp, humidity data from API -->
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+
 </body>
 
 </html>
