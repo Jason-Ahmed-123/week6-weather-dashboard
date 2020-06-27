@@ -1,4 +1,4 @@
-// Function to create persisting list of chosen cities:
+// Function to search persisting list of chosen cities:
 function createCityList(citySearchList) {
   $("#city-list").empty();
 
@@ -12,6 +12,11 @@ function createCityList(citySearchList) {
       splitStr[j] =
         splitStr[j].charAt(0).toUpperCase() + splitStr[j].substring(1);
     }
+    // Searched cities list:
+    var titleCasedCity = splitStr.join(" ");
+    cityListEntry.text(titleCasedCity);
+
+    $("#city-list").append(cityListEntry);
   }
 }
 
@@ -85,7 +90,7 @@ function populateCityWeather(city, citySearchList) {
           // Set up "forecast" to save the retrieved data:
         }).then(function (forecast) {
 
-          // Loop through the forecast list array and display a single forecast entry/time (5th entry of each day which is close to the highest temp/time of the day) from each of the 5 days
+          // Loop through the forecast list array and display a single forecast entry from each of the 5 days:
           for (var i = 6; i < forecast.list.length; i += 8) {
             var forecastDate = $("<h5>");
 
