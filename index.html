@@ -13,17 +13,14 @@
 
     <!-- link to css file -->
     <link rel="stylesheet" href="./assets/style.css">
-
-    <!-- API key from the OpenWeather site: 264003b9e931270d021c72787fb4d0ed -->
-    <!-- API for 5-day weather search by city name:  api.openweathermap.org/data/2.5/forecast?q={city name}&appid={your api key} -->
-
+    <script src="https://kit.fontawesome.com/70fcd40144.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
     <header>
         <div class="heading">
-            <h1>Weather Dashboard</h1>    
+            <h1>Weather Dashboard</h1>
         </div>
     </header>
 
@@ -38,54 +35,88 @@
                         <h5>Search for a City:</h5>
                         <form class="form-inline">
                             <div class="form-group">
-                            <input type="text" class="form-control" id="city-input">
+                                <input type="text" class="form-control" id="city-input">
                             </div>
-                            <button id="search-button" type="submit" class="btn btn-primary">Search</button>
+                            <button id="search-button" type="submit" class="btn btn-primary"><i
+                                    class="fas fa-search"></i></button>
                         </form>
                     </div>
                 </div>
+                <div id="city-list" class="list-group"></div>
             </div>
 
             <!-- The main city info panel -->
             <div class="col-md-9">
                 <div id="weather" class='card'>
                     <div class="card-body">
-                        <p class="card-info" id="temp"></p>
-                        <p class="card-info" id="humidity"></p>
-                        <p class="card-info" id="wind"></p>
-                        <p class="card-info" id="uv"></p>
+                        <div id="city-date-icon">
+                            <span id='city-name'></span>
+                            <span id='current-icon'></span>
+                        </div>
+                        <p class="card-text" id="temperature"></p>
+                        <p class="card-text" id="humidity"></p>
+                        <p class="card-text" id="wind"></p>
+                        <p class="card-text" id="uv"></p>
+                        
                     </div>
                 </div>
 
-                <!-- 5-day weather forecast rows -->
+                <br>
+
                 <div class="row">
                     <div id="forecast-weather" class="col-md-9">
                         <h4>5-Day Forecast:</h4>
+
+                        <!-- Bootstrap card containers for each day's weather info -->
                         <div id="forecast-cards">
-                            <!-- containers for each day's weather info -->
                             <div class="card forecast">
                                 <div id="forecast1" class="card-body">
                                     <!-- date, icon, temp, humidity data from API -->
+                                    <span class="card-title" id='forecast-date1'>
+                                    </span>
+                                    <span id='forecast-icon1'></span>
+                                    <p class="card-text" id="forecast-temp1"></p>
+                                    <p class="card-text" id="forecast-humidity1"></p>
                                 </div>
                             </div>
                             <div class="card forecast">
                                 <div id="forecast2" class="card-body">
                                     <!-- date, icon, temp, humidity data from API -->
+                                    <span class="card-title" id='forecast-date2'>
+                                    </span>
+                                    <span id='forecast-icon2'></span>
+                                    <p class="card-text" id="forecast-temp2"></p>
+                                    <p class="card-text" id="forecast-humidity2"></p>
                                 </div>
                             </div>
                             <div class="card forecast">
                                 <div id="forecast3" class="card-body">
                                     <!-- date, icon, temp, humidity data from API -->
+                                    <span class="card-title" id='forecast-date3'>
+                                    </span>
+                                    <span id='forecast-icon3'></span>
+                                    <p class="card-text" id="forecast-temp3"></p>
+                                    <p class="card-text" id="forecast-humidity3"></p>
                                 </div>
                             </div>
                             <div class="card forecast">
                                 <div id="forecast4" class="card-body">
                                     <!-- date, icon, temp, humidity data from API -->
+                                    <span class="card-title" id='forecast-date4'>
+                                    </span>
+                                    <span id='forecast-icon4'></span>
+                                    <p class="card-text" id="forecast-temp4"></p>
+                                    <p class="card-text" id="forecast-humidity4"></p>
                                 </div>
                             </div>
                             <div class="card forecast">
                                 <div id="forecast5" class="card-body">
                                     <!-- date, icon, temp, humidity data from API -->
+                                    <span class="card-title" id='forecast-date5'>
+                                    </span>
+                                    <span id='forecast-icon5'></span>
+                                    <p class="card-text" id="forecast-temp5"></p>
+                                    <p class="card-text" id="forecast-humidity5"></p>
                                 </div>
                             </div>
                         </div>
@@ -94,11 +125,15 @@
             </div>
         </div>
     </div>
+
     <!-- link to JQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+
     <!-- link to js file -->
-    <script src=".assets/script.js"></script>
+    <script src="./assets/script.js"></script>
+
 </body>
 
 </html>
